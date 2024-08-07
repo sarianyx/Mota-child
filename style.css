@@ -36,6 +36,13 @@
     **MEDIA QUERIES
 */
 
+@media screen and (max-width: 850px) {
+    .options-catalogue, .categorie-et-format, .trier-par {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .header-top-menu {
         display: none !important;
@@ -56,6 +63,64 @@
         font-size: 46px !important;
         font-weight: 400;
     }
+
+    .wpcf7 {
+        width: 60% !important;
+        padding: 0px 0px 20px 75px !important;
+    }
+
+    .wpcf7-text {
+        width: 98%;
+    }
+
+    .catalogue, .interesse, .interaction {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .presentation {
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+    }
+
+    .photographie {
+        align-self: center !important;
+    }
+
+    .informations {
+        border-bottom: none !important;
+    }
+
+    .separator-line {
+        display: block !important;
+    }
+
+    .cette-photo {
+        align-self: start !important;
+        padding-left: 10px !important;
+    }
+
+    .photo-nav {
+        display: none !important;
+    }
+
+    .photos-apparentees {
+        border-top: none !important;
+        align-items: center !important;
+    }
+
+    .images-apparentees {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .footer, .footer-menu {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
 }
 
 /*
@@ -63,7 +128,8 @@
 */
 
 body {
-    width: fit-content;
+    /*width: fit-content;*/
+    margin: 0;
 }
 
 h1 {
@@ -90,6 +156,27 @@ p {
     font-family: 'Poppins';
     font-size: 14px;
     font-weight: 300;
+    line-height: 21px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.description-photo {
+    font-family: 'SpaceMono';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.separator-line {
+    display: none;
+    align-self: center;
+    width: 100vw;
+    height: 10px;
+    border-bottom: solid 1px black;
 }
 
 /*
@@ -155,17 +242,74 @@ p {
 
 .menu-mobile {
     display: none;
-    position: relative;
+    position: fixed;
     top: -200px;
     opacity: 0.1;
-    background-color: #FFF5E9;
+    background-color: #E00000;
     height: auto;
+    z-index: 1;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+}
+
+.header-mobile-menu {
+    text-align: center;
+}
+
+.header-mobile-menu li {
+    font-family: 'SpaceMono';
+    font-weight: 400;
+    font-size: 44px;
+    text-transform: uppercase;
+    padding: 1rem 3rem 2rem 3rem;
+}
+
+.header-mobile-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-mobile-menu .contact-btn p {
+    font-family: 'SpaceMono';
+    font-size: 44px;
+    text-transform: uppercase;
+    color: white;
+    margin: 0px;
 }
   
 .menu-mobile.appeared_from_above {
+    align-items: center;
+    justify-content: center;
     opacity: 1;
-    transform: translateY(200px);
-    transition: opacity 2000ms, transform 2000ms;
+    transform: translateY(278px);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.header-top-menu-mobile-btn .cross_button {
+    font-size: 2.2rem;
+    padding: 0;
+    margin: 0;
+    width: 27px;
+    height: 30px;
+    position: relative;
+}
+
+.header-hero {
+    background-size: cover;
+    background-position: center;
+}
+
+.header-hero h1 {
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-top: 20rem;
+    padding-bottom: 20rem;
 }
 
 .header-hero img {
@@ -179,16 +323,32 @@ p {
 .modale {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.8);
+    opacity: 0;
 }
 
-.modale-header h2 {
+.modale-header1 {
+    min-height: 3rem;
+    margin-top: 10px;
+    background-image: url("https://localhost/mota/wp-content/uploads/2024/07/Contact.png");
+    background-position-x: center;
+}
+
+.modale-header2 {
+    min-height: 3rem;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    background-image: url("https://localhost/mota/wp-content/uploads/2024/07/Contact.png");
+    background-position-x: right;
+}
+
+.modale-header1 h2, .modale-header2 h2 {
     margin: 0px;
 }
 
@@ -196,28 +356,13 @@ p {
     position: relative;
     background-color: white;
     margin: 15% auto;
-    padding: 0px 20px 20px 20px;
-    border: solid 1px black;
+    padding: 0px 0px 20px 0px;
+    border: solid 5px black;
     width: fit-content;
 }
 
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    left: 94%;
-    top: -3%;
-    padding: 0px 12px 5px 12px;
-    background-color: white;
-    border: solid 1px;
-    border-radius: 25px;
-}
-
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.wpcf7 {
+    padding: 0px 150px 20px 150px;
 }
 
 .wpcf7-form p {
@@ -253,7 +398,323 @@ p {
 }
 
 .modale-appearance {
+    opacity: 1;
+    transition: opacity 1200ms;
+}
+
+/*
+    **ACCUEIL
+*/
+
+.accueil-contenu {
+    margin: 20px 100px 20px 100px;
+}
+
+.catalogue {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 42vw);
+    grid-gap: 10px;
+}
+
+.options-catalogue {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.categorie-et-format {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 42vw;
+}
+
+.trier-par {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 42vw;
+}
+
+.selector {
+    font-family: "poppins";
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 12rem 0.5rem 1rem;
+    background-color: white;
+    border: solid 1px lightgray;
+    border-radius: 0.5rem;
+    width: 45%;
+}
+
+.charger-plus-btn {
+    text-align: center;
+    margin: 1rem;
+}
+
+.charger-plus-btn button {
+    font-family: "spaceMono";
+    font-weight: 400;
+    font-size: 12px;
+    padding: 0.5rem 4rem;
+}
+
+/*
+    **SINGLE PHOTO
+*/
+
+.single-contenu {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 100px 20px 100px;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* or center? */
+}
+
+.informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 42vw;
+    margin-right: 0px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px black;
+}
+
+.photographie {
+    width: 42vw;
+    margin-left: 0px;
+    align-self: flex-end;
+}
+
+.photographie figure {
+    margin: 0;
+}
+
+.photographie figure img {
+    width: 100%;
+    object-fit: contain;
+    height: auto;
+}
+
+.interaction {
+    display: flex;
+    flex-direction: row;
+}
+
+.interesse {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.single-contact-btn {
+    cursor: pointer;
+    font-family: "SpaceMono";
+    font-weight: 400;
+    font-size: 12px;
+    width: 272px;
+    height: 50px;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    border-radius: 2px;
+    background-color: #D8D8D8;
+}
+
+.photo-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 50%;
+}
+
+.nav-arrows {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-arrows a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-arrows span {
+    font-size: 40px;
+}
+
+.no-thumb {
     display: block;
+    opacity: 0;
+}
+
+.prev-thumb {
+    display: none;
+}
+
+.next-thumb {
+    display: none;
+}
+
+.photos-apparentees {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: solid 1px black;
+}
+
+.images-apparentees {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 42vw);
+    grid-gap: 10px;
+}
+
+.one-photo {
+    display: flex;
+    width: 42vw;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.one-photo figure {
+    width: 100%;
+    margin: 0;
+}
+
+.one-photo figure img {
+    width: 100%;
+    object-fit: cover;
+    height: 45vh;
+}
+
+/*
+    **SINGLE PHOTO MASQUE
+*/
+
+.masque-conteneur {
+    display: none;
+}
+
+.masque {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,0.8);
+    height: 45vh;
+    width: 42vw;
+    opacity: 0.8;
+}
+
+.elargir {
+    text-align: end;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.voir {
+    text-align: center;
+}
+
+.masque-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.masque-bottom-element p {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    margin: 1rem;
+}
+
+/*
+    **LIGHTBOX
+*/
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 3;
+}
+
+.lightbox__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.lightbox__container img {
+    max-height: 100vh;
+    width: auto;
+}
+
+.lightbox__close {
+    background-color: transparent;
+    border: none;
+    color: white;
+    scale: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.lightbox__next, .lightbox__prev {
+    background-color: transparent;
+    border: none;
+    color: white;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    margin: 1rem;
+    scale: 3;
+    cursor: pointer;
+}
+
+.lightbox__prev {
+    right: auto;
+    left: 0;
+}
+
+.lightbox-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0rem 15rem 0rem 15rem;
+}
+
+.lightbox-ref, .lightbox-cat {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    position: fixed;
+    bottom: 5%;
+    padding: 0rem 0rem 0rem 15rem;
+}
+
+.lightbox-cat {
+    right: 0;
+    padding: 0rem 15rem 0rem 0rem;
 }
 
 /*
@@ -265,6 +726,7 @@ p {
     flex-direction: row;
     justify-content: center;
     border-top: solid 1px black;
+    padding-right: 3rem;
 }
 
 .footer p {

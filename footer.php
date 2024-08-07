@@ -16,4 +16,6 @@
 </div>
 <?php get_template_part('template-parts/modale'); ?>
 </body>
-<script src="https://localhost/mota/wp-content/themes/Mota-child/js/scripts1.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts1.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts-load-more.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/js/script-lightbox.js"></script>
