@@ -10,7 +10,7 @@
                         </div>
                         <div class="voir">
                             <?php 
-                                echo '<a href="' . get_permalink($post->ID) . '" title="' . $post->post_title . '">' ?> <img src="<?php echo get_stylesheet_directory_uri(). '/images/Icon_eye.png' ?>" alt="icon voir"> <?php '</a>';
+                                echo '<a href="' . get_permalink($post->ID) . '" title="' . $post->post_title . '">' . '<img src="https://localhost/mota/wp-content/uploads/2024/07/Icon_eye.png" alt="icon voir">' . '</a>';
                             ?>
                         </div>
                         <div class="masque-bottom">

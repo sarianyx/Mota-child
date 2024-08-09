@@ -78,9 +78,7 @@
                 $('.catalogue-more').html(response.data); // Et afficher le HTML
             });
     
-        }
-        
-    );
+        });
 
     });
 })(jQuery);

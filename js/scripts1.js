@@ -70,6 +70,8 @@ if (theContactSingle != null) {
         var theRef = document.querySelector(".single-ref-photo").textContent.substring(12, 18);
         console.log("theRef = ",theRef);
         $("#modale-ref-photo .wpcf7-form-control").val(theRef);
+        theBuffer2 = theModale.clientHeight;
+        theModale.classList.add("modale-appearance");
         modale = true;
     };
   });
